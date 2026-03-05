@@ -1,8 +1,11 @@
 fastapi
 uvicorn
-pillow
-gdown
-python-multipart
---extra-index-url https://download.pytorch.org/whl/cpu
 torch
 torchvision
+pillow
+numpy
+tqdm
+requests
+beautifulsoup4
+gdown
+python-multipart
