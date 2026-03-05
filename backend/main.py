@@ -9,7 +9,7 @@ import io
 app = FastAPI()
 
 MODEL_PATH = "model.pth"
-FILE_ID = "YOUR_GOOGLE_DRIVE_FILE_ID"
+FILE_ID = "1f66ewUKgn7CLJn0q74Mk_iBUGEdAz4sp"
 
 @app.on_event("startup")
 def load_model():
@@ -33,5 +33,6 @@ async def process(file: UploadFile = File(...)):
     buf = io.BytesIO()
     result.save(buf, format="PNG")
     buf.seek(0)
+
 
     return StreamingResponse(buf, media_type="image/png")
