@@ -1,7 +1,7 @@
 fastapi
 uvicorn
-torch==2.2.2+cpu --index-url https://download.pytorch.org/whl/cpu
-torchvision==0.17.2+cpu --index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
 pillow
 numpy
 tqdm
