@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MRI Motion Artifact AI</title>
+<style>
+body{font-family:Arial;background:#f3f6fb;text-align:center;padding:40px}
+.card{background:white;padding:30px;border-radius:10px;max-width:700px;margin:auto}
+img{max-width:300px;margin:10px}
+button{padding:10px 20px;margin-top:20px}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>MRI Motion Artifact Correction</h2>
+
+<input type="file" id="fileInput">
+
+<br><br>
+
+<button onclick="uploadImage()">Process MRI</button>
+
+<br><br>
+
+<h3>Original</h3>
+<img id="original">
+
+<h3>AI Output</h3>
+<img id="output">
+
+</div>
+
+<script>
+
+async function uploadImage(){
+
+const file = document.getElementById("fileInput").files[0]
+
+document.getElementById("original").src = URL.createObjectURL(file)
+
+const formData = new FormData()
+formData.append("file", file)
+
+const response = await fetch("https://YOUR_RAILWAY_URL/process",{
+method:"POST",
+body:formData
+})
+
+const blob = await response.blob()
+
+document.getElementById("output").src = URL.createObjectURL(blob)
+
+}
+
+</script>
+
+</body>
+</html>
