@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeuroRefine | Hospital Portal Login</title>
+    
+    <!-- ADDED TAB ICON (FAVICON) HERE -->
+    <link rel="icon" type="image/png" href="logoNeuralRefine.png">
+
     <style>
         :root {
             --primary-blue: #0077b6;
@@ -34,11 +38,11 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
-        /* Branding Side */
+        /* Left Side: Branding and Clinical Impact */
         .branding-side {
             flex: 1.1;
             background: linear-gradient(rgba(2, 62, 138, 0.88), rgba(2, 62, 138, 0.88)), 
-                        url('https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'); /* Clinical MRI Environment */
+                        url('https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
             background-size: cover;
             padding: 50px;
             display: flex;
@@ -52,7 +56,7 @@
             margin-bottom: 30px;
         }
 
-        /* The White Box for the Logo */
+        /* White box for blue logo contrast */
         .logo-white-box {
             background-color: white;
             padding: 12px;
@@ -93,7 +97,7 @@
             backdrop-filter: blur(8px);
         }
 
-        /* Login Form Side */
+        /* Right Side: Authorized Form */
         .form-side {
             flex: 1;
             padding: 60px;
@@ -192,10 +196,9 @@
 <body>
 
     <div class="login-container">
-        <!-- Branding Side -->
+        <!-- Brand Value Prop -->
         <div class="branding-side">
             <div class="logo-container">
-                <!-- White box wrapping the blue logo for contrast -->
                 <div class="logo-white-box">
                     <img src="logoNeuralRefine.png" alt="NeuralRefine Logo" class="logo-img">
                 </div>
@@ -203,14 +206,14 @@
             </div>
             
             <p><strong>Advanced MRI Artifact Reconstruction.</strong><br>
-            Our AI system enhances brain MRI images by reducing motion blur and scanning artifacts while preserving critical diagnostic details [3, 4].</p>
+            Automatically improve MRI images by reducing motion blur and scanning artifacts while preserving diagnostic structures [1, 2].</p>
             
             <div class="stats-tag">
-                Motion artifacts impact up to <strong>59%</strong> of MRI scans, leading to significant diagnostic delays and hospital resource strain [5, 6].
+                Motion artifacts impact up to <strong>59%</strong> of MRI scans, causing significant diagnostic delays [3, 4].
             </div>
         </div>
 
-        <!-- Authorized Hospital Login -->
+        <!-- Authorized Organization Portal -->
         <div class="form-side">
             <div class="form-header">
                 <h2>Hospital Portal</h2>
@@ -219,8 +222,8 @@
 
             <form>
                 <div class="input-group">
-                    <label>Hospital/Organization Email</label>
-                    <input type="email" placeholder="admin@medicalcenter.org" required>
+                    <label>Hospital Email</label>
+                    <input type="email" placeholder="administrator@hospital-net.org" required>
                 </div>
                 <div class="input-group">
                     <label>Secure Password</label>
@@ -235,7 +238,7 @@
             </div>
 
             <div class="restricted-notice">
-                Protected by 256-bit encryption. Access is restricted to <strong>NeuroRefine B2B SaaS</strong> subscribers [1].
+                System access is restricted to <strong>NeuroRefine B2B SaaS</strong> subscribers [5, 6].
             </div>
         </div>
     </div>
