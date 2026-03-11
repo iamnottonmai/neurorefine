@@ -1,60 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>MRI Motion Artifact AI</title>
-<style>
-body{font-family:Arial;background:#f3f6fb;text-align:center;padding:40px}
-.card{background:white;padding:30px;border-radius:10px;max-width:700px;margin:auto}
-img{max-width:300px;margin:10px}
-button{padding:10px 20px;margin-top:20px}
-</style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroRefine | Hospital Portal Login</title>
+    <style>
+        :root {
+            --primary-blue: #0077b6;
+            --dark-navy: #023e8a;
+            --light-bg: #f0f4f8;
+            --accent-cyan: #48cae4;
+            --text-gray: #4a5568;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #023e8a 0%, #001219 100%);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .login-container {
+            display: flex;
+            width: 900px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Left Side: Branding and Impact */
+        .branding-side {
+            flex: 1;
+            background: linear-gradient(rgba(2, 62, 138, 0.8), rgba(2, 62, 138, 0.8)), 
+                        url('https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); /* Representative Brain/Medical Image */
+            background-size: cover;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 8px;
+            margin-right: 15px;
+            /* Placeholder for the pixelated/anatomical brain logo mentioned in sources */
+            background-image: url('https://via.placeholder.com/50/0077b6/ffffff?text=NR'); 
+            background-size: cover;
+        }
+
+        .branding-side h1 {
+            font-size: 2rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .branding-side p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .stats-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-cyan);
+        }
+
+        /* Right Side: Login Form */
+        .form-side {
+            flex: 1;
+            padding: 60px 40px;
+            color: var(--text-gray);
+            background: white;
+        }
+
+        .form-header h2 {
+            margin-top: 0;
+            color: var(--dark-navy);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-blue);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background: var(--dark-navy);
+        }
+
+        .footer-links {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .restricted-notice {
+            font-size: 0.75rem;
+            color: #a0aec0;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
 
-<div class="card">
+    <div class="login-container">
+        <!-- Branding Information drawn from Sources -->
+        <div class="branding-side">
+            <div class="logo-area">
+                <div class="logo-icon"></div>
+                <h1>NeuroRefine</h1>
+            </div>
+            <p><strong>AI-Powered MRI Artifact Reconstruction.</strong><br>
+            Recover diagnostic quality scans instantly by correcting motion blur, noise, and artifacts while preserving vital anatomical structures [3, 4].</p>
+            
+            <div class="stats-tag">
+                Motion artifacts occur in up to <strong>59%</strong> of MRI scans, leading to missed diagnoses [5, 6].
+            </div>
+        </div>
 
-<h2>MRI Motion Artifact Correction</h2>
+        <!-- Login Form for Organizations -->
+        <div class="form-side">
+            <div class="form-header">
+                <h2>Hospital Portal</h2>
+                <p>Secure access for healthcare organizations.</p>
+            </div>
 
-<input type="file" id="fileInput">
+            <form>
+                <div class="input-group">
+                    <label>Organization Email</label>
+                    <input type="email" placeholder="admin@hospital.org" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
 
-<br><br>
+                <button type="submit" class="login-btn">Secure Login</button>
+            </form>
 
-<button onclick="uploadImage()">Process MRI</button>
+            <div class="footer-links">
+                <a href="#">Forgot password?</a> • <a href="#">Request Hospital Access</a>
+            </div>
 
-<br><br>
-
-<h3>Original</h3>
-<img id="original">
-
-<h3>AI Output</h3>
-<img id="output">
-
-</div>
-
-<script>
-
-async function uploadImage(){
-
-const file = document.getElementById("fileInput").files[0]
-
-document.getElementById("original").src = URL.createObjectURL(file)
-
-const formData = new FormData()
-formData.append("file", file)
-
-const response = await fetch("https://YOUR_RAILWAY_URL/process",{
-method:"POST",
-body:formData
-})
-
-const blob = await response.blob()
-
-document.getElementById("output").src = URL.createObjectURL(blob)
-
-}
-
-</script>
+            <div class="restricted-notice">
+                Access is strictly restricted to registered medical facilities and imaging centers [2, 7].
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
