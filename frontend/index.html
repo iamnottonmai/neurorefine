@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: linear-gradient(135deg, #023e8a 0%, #001219 100%);
             margin: 0;
             display: flex;
@@ -26,132 +26,151 @@
 
         .login-container {
             display: flex;
-            width: 900px;
+            width: 950px;
+            height: 600px;
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
-        /* Left Side: Branding and Impact */
+        /* Branding Side */
         .branding-side {
-            flex: 1;
-            background: linear-gradient(rgba(2, 62, 138, 0.85), rgba(2, 62, 138, 0.85)), 
-                        url('https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+            flex: 1.1;
+            background: linear-gradient(rgba(2, 62, 138, 0.88), rgba(2, 62, 138, 0.88)), 
+                        url('https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'); /* Clinical MRI Environment */
             background-size: cover;
-            padding: 40px;
+            padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .logo-area {
+        .logo-container {
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* The White Box for the Logo */
+        .logo-white-box {
+            background-color: white;
+            padding: 12px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
         .logo-img {
-            width: 60px; /* Adjusted for the neural brain logo visibility */
+            width: 55px; 
             height: auto;
-            margin-right: 15px;
-            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2));
         }
 
         .branding-side h1 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             margin: 0;
-            letter-spacing: 1px;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .branding-side p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.6;
-            opacity: 0.95;
-            margin-top: 10px;
+            opacity: 0.9;
+            margin-top: 15px;
         }
 
         .stats-tag {
             background: rgba(255, 255, 255, 0.15);
-            padding: 12px 18px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            margin-top: 25px;
-            border-left: 4px solid var(--accent-cyan);
-            backdrop-filter: blur(5px);
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin-top: 35px;
+            border-left: 5px solid var(--accent-cyan);
+            backdrop-filter: blur(8px);
         }
 
-        /* Right Side: Login Form */
+        /* Login Form Side */
         .form-side {
             flex: 1;
-            padding: 60px 50px;
+            padding: 60px;
             color: var(--text-gray);
             background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .form-header h2 {
             margin-top: 0;
             color: var(--dark-navy);
             font-size: 1.8rem;
+            margin-bottom: 10px;
         }
 
         .form-header p {
-            margin-bottom: 30px;
-            font-size: 0.9rem;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+            color: #718096;
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .input-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: var(--dark-navy);
         }
 
         .input-group input {
             width: 100%;
-            padding: 14px;
-            border: 1.5px solid #e2e8f0;
-            border-radius: 8px;
+            padding: 15px;
+            border: 2px solid #edf2f7;
+            border-radius: 10px;
             box-sizing: border-box;
             outline: none;
             transition: all 0.3s ease;
             font-size: 1rem;
+            background: #f8fafc;
         }
 
         .input-group input:focus {
             border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.1);
         }
 
         .login-btn {
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             background: var(--primary-blue);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 10px;
+            font-weight: 700;
             cursor: pointer;
             font-size: 1.1rem;
-            transition: background 0.3s;
-            margin-top: 10px;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
         }
 
         .login-btn:hover {
             background: var(--dark-navy);
+            transform: translateY(-1px);
         }
 
         .footer-links {
             margin-top: 30px;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .footer-links a {
@@ -163,42 +182,45 @@
         .restricted-notice {
             font-size: 0.75rem;
             color: #a0aec0;
-            margin-top: 40px;
+            margin-top: 50px;
             text-align: center;
-            border-top: 1px solid #edf2f7;
-            padding-top: 20px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 25px;
         }
     </style>
 </head>
 <body>
 
     <div class="login-container">
-        <!-- Branding Side with New Logo -->
+        <!-- Branding Side -->
         <div class="branding-side">
-            <div class="logo-area">
-                <!-- Using your provided logo file -->
-                <img src="logoNeuralRefine.png" alt="NeuralRefine Logo" class="logo-img">
+            <div class="logo-container">
+                <!-- White box wrapping the blue logo for contrast -->
+                <div class="logo-white-box">
+                    <img src="logoNeuralRefine.png" alt="NeuralRefine Logo" class="logo-img">
+                </div>
                 <h1>NeuroRefine</h1>
             </div>
-            <p><strong>AI-Powered MRI Artifact Reconstruction.</strong><br>
-            Instantly recover diagnostic quality scans by mitigating motion blur and noise while preserving critical anatomical structures [2, 4].</p>
+            
+            <p><strong>Advanced MRI Artifact Reconstruction.</strong><br>
+            Our AI system enhances brain MRI images by reducing motion blur and scanning artifacts while preserving critical diagnostic details [3, 4].</p>
             
             <div class="stats-tag">
-                Motion artifacts impact up to <strong>59%</strong> of MRI scans, leading to high rescan costs and diagnostic delays [1, 4, 5].
+                Motion artifacts impact up to <strong>59%</strong> of MRI scans, leading to significant diagnostic delays and hospital resource strain [5, 6].
             </div>
         </div>
 
-        <!-- Restricted Hospital Login Form -->
+        <!-- Authorized Hospital Login -->
         <div class="form-side">
             <div class="form-header">
                 <h2>Hospital Portal</h2>
-                <p>Authorized access for registered medical facilities.</p>
+                <p>Authorized access for registered clinical facilities.</p>
             </div>
 
             <form>
                 <div class="input-group">
-                    <label>Organization Email</label>
-                    <input type="email" placeholder="admin@medical-center.org" required>
+                    <label>Hospital/Organization Email</label>
+                    <input type="email" placeholder="admin@medicalcenter.org" required>
                 </div>
                 <div class="input-group">
                     <label>Secure Password</label>
@@ -209,11 +231,11 @@
             </form>
 
             <div class="footer-links">
-                <a href="#">Forgot password?</a> • <a href="#">Request Access</a>
+                <a href="#">Forgot credentials?</a> • <a href="#">Request Access</a>
             </div>
 
             <div class="restricted-notice">
-                System access is restricted to healthcare organizations using the <strong>NeuroRefine B2B SaaS</strong> platform [6].
+                Protected by 256-bit encryption. Access is restricted to <strong>NeuroRefine B2B SaaS</strong> subscribers [1].
             </div>
         </div>
     </div>
