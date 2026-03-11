@@ -36,8 +36,8 @@
         /* Left Side: Branding and Impact */
         .branding-side {
             flex: 1;
-            background: linear-gradient(rgba(2, 62, 138, 0.8), rgba(2, 62, 138, 0.8)), 
-                        url('https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); /* Representative Brain/Medical Image */
+            background: linear-gradient(rgba(2, 62, 138, 0.85), rgba(2, 62, 138, 0.85)), 
+                        url('https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
             padding: 40px;
             display: flex;
@@ -48,45 +48,44 @@
         .logo-area {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: white;
-            border-radius: 8px;
+        .logo-img {
+            width: 60px; /* Adjusted for the neural brain logo visibility */
+            height: auto;
             margin-right: 15px;
-            /* Placeholder for the pixelated/anatomical brain logo mentioned in sources */
-            background-image: url('https://via.placeholder.com/50/0077b6/ffffff?text=NR'); 
-            background-size: cover;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2));
         }
 
         .branding-side h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin: 0;
             letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .branding-side p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.6;
-            opacity: 0.9;
+            opacity: 0.95;
+            margin-top: 10px;
         }
 
         .stats-tag {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 15px;
-            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 18px;
+            border-radius: 8px;
             font-size: 0.85rem;
-            margin-top: 20px;
+            margin-top: 25px;
             border-left: 4px solid var(--accent-cyan);
+            backdrop-filter: blur(5px);
         }
 
         /* Right Side: Login Form */
         .form-side {
             flex: 1;
-            padding: 60px 40px;
+            padding: 60px 50px;
             color: var(--text-gray);
             background: white;
         }
@@ -94,6 +93,12 @@
         .form-header h2 {
             margin-top: 0;
             color: var(--dark-navy);
+            font-size: 1.8rem;
+        }
+
+        .form-header p {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
         }
 
         .input-group {
@@ -104,21 +109,25 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .input-group input {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e0;
-            border-radius: 5px;
+            padding: 14px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
             box-sizing: border-box;
             outline: none;
-            transition: border 0.3s;
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .input-group input:focus {
             border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
         }
 
         .login-btn {
@@ -127,11 +136,12 @@
             background: var(--primary-blue);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: background 0.3s;
+            margin-top: 10px;
         }
 
         .login-btn:hover {
@@ -139,7 +149,7 @@
         }
 
         .footer-links {
-            margin-top: 25px;
+            margin-top: 30px;
             text-align: center;
             font-size: 0.85rem;
         }
@@ -147,47 +157,51 @@
         .footer-links a {
             color: var(--primary-blue);
             text-decoration: none;
+            font-weight: 600;
         }
 
         .restricted-notice {
             font-size: 0.75rem;
             color: #a0aec0;
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
+            border-top: 1px solid #edf2f7;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <div class="login-container">
-        <!-- Branding Information drawn from Sources -->
+        <!-- Branding Side with New Logo -->
         <div class="branding-side">
             <div class="logo-area">
-                <div class="logo-icon"></div>
+                <!-- Using your provided logo file -->
+                <img src="logoNeuralRefine.png" alt="NeuralRefine Logo" class="logo-img">
                 <h1>NeuroRefine</h1>
             </div>
             <p><strong>AI-Powered MRI Artifact Reconstruction.</strong><br>
-            Recover diagnostic quality scans instantly by correcting motion blur, noise, and artifacts while preserving vital anatomical structures [3, 4].</p>
+            Instantly recover diagnostic quality scans by mitigating motion blur and noise while preserving critical anatomical structures [2, 4].</p>
             
             <div class="stats-tag">
-                Motion artifacts occur in up to <strong>59%</strong> of MRI scans, leading to missed diagnoses [5, 6].
+                Motion artifacts impact up to <strong>59%</strong> of MRI scans, leading to high rescan costs and diagnostic delays [1, 4, 5].
             </div>
         </div>
 
-        <!-- Login Form for Organizations -->
+        <!-- Restricted Hospital Login Form -->
         <div class="form-side">
             <div class="form-header">
                 <h2>Hospital Portal</h2>
-                <p>Secure access for healthcare organizations.</p>
+                <p>Authorized access for registered medical facilities.</p>
             </div>
 
             <form>
                 <div class="input-group">
                     <label>Organization Email</label>
-                    <input type="email" placeholder="admin@hospital.org" required>
+                    <input type="email" placeholder="admin@medical-center.org" required>
                 </div>
                 <div class="input-group">
-                    <label>Password</label>
+                    <label>Secure Password</label>
                     <input type="password" placeholder="••••••••" required>
                 </div>
 
@@ -195,11 +209,11 @@
             </form>
 
             <div class="footer-links">
-                <a href="#">Forgot password?</a> • <a href="#">Request Hospital Access</a>
+                <a href="#">Forgot password?</a> • <a href="#">Request Access</a>
             </div>
 
             <div class="restricted-notice">
-                Access is strictly restricted to registered medical facilities and imaging centers [2, 7].
+                System access is restricted to healthcare organizations using the <strong>NeuroRefine B2B SaaS</strong> platform [6].
             </div>
         </div>
     </div>
