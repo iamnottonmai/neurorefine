@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeuroRefine | Hospital Portal Login</title>
     
-    <!-- ADDED TAB ICON (FAVICON) HERE -->
     <link rel="icon" type="image/png" href="logoNeuralRefine.png">
 
     <style>
@@ -28,6 +27,61 @@
             color: white;
         }
 
+        /* White flash overlay */
+        #flash-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: white;
+            z-index: 9999;
+            animation: none;
+        }
+
+        #flash-overlay.active {
+            display: block;
+            animation: flashPulse 1.4s ease-in-out infinite;
+        }
+
+        @keyframes flashPulse {
+            0%   { opacity: 1; }
+            40%  { opacity: 0.3; }
+            60%  { opacity: 1; }
+            80%  { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        #loading-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #023e8a;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            z-index: 10000;
+            display: none;
+            text-align: center;
+        }
+
+        #loading-text.active {
+            display: block;
+        }
+
+        #loading-dots::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%   { content: ''; }
+            25%  { content: '.'; }
+            50%  { content: '..'; }
+            75%  { content: '...'; }
+            100% { content: ''; }
+        }
+
         .login-container {
             display: flex;
             width: 950px;
@@ -38,7 +92,6 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
-        /* Left Side: Branding and Clinical Impact */
         .branding-side {
             flex: 1.1;
             background: linear-gradient(rgba(2, 62, 138, 0.88), rgba(2, 62, 138, 0.88)), 
@@ -56,7 +109,6 @@
             margin-bottom: 30px;
         }
 
-        /* White box for blue logo contrast */
         .logo-white-box {
             background-color: white;
             padding: 12px;
@@ -97,7 +149,6 @@
             backdrop-filter: blur(8px);
         }
 
-        /* Right Side: Authorized Form */
         .form-side {
             flex: 1;
             padding: 60px;
@@ -195,8 +246,13 @@
 </head>
 <body>
 
+    <!-- Flash overlay (white screen) -->
+    <div id="flash-overlay"></div>
+    <div id="loading-text">
+        Connecting to NeuroRefine servers<span id="loading-dots"></span>
+    </div>
+
     <div class="login-container">
-        <!-- Brand Value Prop -->
         <div class="branding-side">
             <div class="logo-container">
                 <div class="logo-white-box">
@@ -213,21 +269,20 @@
             </div>
         </div>
 
-        <!-- Authorized Organization Portal -->
         <div class="form-side">
             <div class="form-header">
                 <h2>Hospital Portal</h2>
                 <p>Authorized access for registered clinical facilities.</p>
             </div>
 
-            <form>
+            <form id="login-form">
                 <div class="input-group">
                     <label>Hospital Email</label>
-                    <input type="email" placeholder="administrator@hospital-net.org" required>
+                    <input type="email" id="email-input" placeholder="administrator@hospital-net.org" required>
                 </div>
                 <div class="input-group">
                     <label>Secure Password</label>
-                    <input type="password" placeholder="••••••••" required>
+                    <input type="password" id="password-input" placeholder="••••••••" required>
                 </div>
 
                 <button type="submit" class="login-btn">Secure Login</button>
@@ -242,6 +297,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email-input').value.trim().toLowerCase();
+            const password = document.getElementById('password-input').value;
+
+            if (email === 'radiology@hospital.co.th' && password === '1234') {
+                const overlay = document.getElementById('flash-overlay');
+                const loadingText = document.getElementById('loading-text');
+
+                overlay.classList.add('active');
+                loadingText.classList.add('active');
+
+                // The only way out is a page refresh — no timeout, no redirect
+            }
+        });
+    </script>
 
 </body>
 </html>
